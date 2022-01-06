@@ -35,8 +35,28 @@
 - (IBAction)buttonTapped:(id)sender {
   NSLog(@"Button was tapped!");
 
+  self.label.text = self.textField.text;
+  self.textField.text = @"";
   
   
+  // set label text color or foreground color
+  UIColor *myTextColor = UIColor.whiteColor;
+  self.label.textColor = myTextColor;
+  
+  // set label background color
+  // from google: rgba(99, 110, 114,1.0)
+  UIColor *textBGColor = [UIColor colorWithRed:99.0/255.0
+                                         green:110.0/255.0
+                                          blue:114.0/255.0
+                                         alpha:1.0];
+  self.label.backgroundColor = textBGColor;
+  
+  // won't work!
+  //self.button.titleLabel.text = @"BUTTON WAS TAPPED!~";
+  // works!
+  [self.button setTitle:@"Button was tapped!"
+               forState:UIControlStateNormal];
+
 }
 
 - (void)viewDidLoad {
