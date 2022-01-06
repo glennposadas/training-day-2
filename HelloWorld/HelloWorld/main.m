@@ -26,6 +26,8 @@ int main(int argc, const char * argv[]) {
     
     NSLog(@"The number of characters in newObjectString is: %ld", len);
     NSLog(@"The number of chars in newObjectString using unsigned long is: %ld", len2);
+    
+    
   }
   return 0;
 }
