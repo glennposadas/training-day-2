@@ -7,27 +7,66 @@
 
 #import "ViewController.h"
 
+/**
+ 
+ ACTIVITY:
+ 
+ 1. when button is tapped, put the textField's text value into the label.
+ 2. clear out the textField's text.
+ 
+ 
+ Notes:
+ null in iOS (Swift and Objective-C) is nil.
+ to clear an NSString, set it to nil or "" .
+ 
+ 
+ */
+
 @interface ViewController ()
+
+@property (weak, nonatomic) IBOutlet UITextField *textField;
+@property (weak, nonatomic) IBOutlet UIButton *button;
+@property (weak, nonatomic) IBOutlet UILabel *label;
 
 @end
 
 @implementation ViewController
 
+- (IBAction)buttonTapped:(id)sender {
+  NSLog(@"Button was tapped!");
+  self.label.text = self.textField.text;
+  self.textField.text = @"";
+  
+  
+  // won't work!
+  //self.button.titleLabel.text = @"BUTTON WAS TAPPED!~";
+  // works!
+  [self.button setTitle:@"Button was tapped!"
+               forState:UIControlStateNormal];
+  
+  
+}
+
 - (void)viewDidLoad {
   [super viewDidLoad];
   
+  self.label.text = @"Hello, World!";
+  
+  [self.button setTitle:@"HEY THIS IS HIGHLIGHTED STATE"
+               forState:UIControlStateHighlighted];
+  
   //[self printHelloWorld];
 //  [self printThisString:@"Hey!"];
-//  
+//
 //  NSString *string1;
 //  string1 = @"This is string1";
-//  
+//
 //  [self printThisString:string1];
-//  
+//
 //  NSString *a = @"🔥";
 //  NSString *b = @"🇵🇭";
 //  int simpleNum = 69;
-//  
+//
 //  NSString *string2;
 //  string2 = [NSString stringWithFormat:@"This is a formatted string %@, another string %@, with a number: %d", a, b, simpleNum];
 //
