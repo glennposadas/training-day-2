@@ -84,7 +84,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Button"/>
                                         <connections>
-                                            <segue destination="07l-4m-Lkv" kind="show" id="A4u-Hd-meW"/>
+                                            <segue destination="07l-4m-Lkv" kind="show" identifier="segueToSecondScreen" id="A4u-Hd-meW"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -116,17 +116,36 @@
             </objects>
             <point key="canvasLocation" x="971" y="50"/>
         </scene>
-        <!--View Controller-->
+        <!--SECOND SCREEN-->
         <scene sceneID="GhZ-H4-MDB">
             <objects>
-                <viewController id="07l-4m-Lkv" sceneMemberID="viewController">
+                <viewController id="07l-4m-Lkv" customClass="SecondViewController" customModule="SwiftCodeUI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Z0P-Ym-vZP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VV4-o1-pXd">
+                                <rect key="frame" x="16" y="450" width="382" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="LKn-Qp-fOY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="lm2-v3-5Ft"/>
                         <color key="backgroundColor" systemColor="systemBrownColor"/>
+                        <constraints>
+                            <constraint firstItem="VV4-o1-pXd" firstAttribute="leading" secondItem="lm2-v3-5Ft" secondAttribute="leading" constant="16" id="4NU-nA-oyS"/>
+                            <constraint firstItem="lm2-v3-5Ft" firstAttribute="trailing" secondItem="VV4-o1-pXd" secondAttribute="trailing" constant="16" id="Mfc-P8-RTe"/>
+                            <constraint firstItem="VV4-o1-pXd" firstAttribute="centerY" secondItem="lm2-v3-5Ft" secondAttribute="centerY" id="eNp-Pg-ChX"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="zEt-sQ-Tyf"/>
+                    <navigationItem key="navigationItem" title="SECOND SCREEN" id="zEt-sQ-Tyf"/>
+                    <connections>
+                        <outlet property="label" destination="VV4-o1-pXd" id="eHg-Ff-Yry"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HLP-Zt-6fb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

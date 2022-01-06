@@ -38,5 +38,21 @@ class ViewController: UIViewController {
     
     view.addSubview(label)
   }
+  
+  // NAVIGATION
+  // HANDLER
+  // type for autocomplete: PrepareForSe...
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    let identifierToSecondScreen = "segueToSecondScreen"
+    
+    if segue.identifier == identifierToSecondScreen {
+      // then we know that we're going to the second screen.
+      // get the reference for second screen!
+      
+      let secondScreen = segue.destination as! SecondViewController
+      secondScreen.dataText = "SOME VALUE FROM OUR TEXTFIELD"
+    }
+  }
 }
 
