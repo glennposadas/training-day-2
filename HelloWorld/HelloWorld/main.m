@@ -12,7 +12,20 @@ int main(int argc, const char * argv[]) {
     // insert code here...
     // ARC - automatic reference counting.
     NSString *newObjectString = @"Hello, World! 🇨🇦!!!";
-    NSLog(@"%@", newObjectString);
+    
+    NSString *lowerCasedHelloWorld = newObjectString.lowercaseString;
+    
+    NSLog(@"lowercaseString -> %@", lowerCasedHelloWorld);
+    
+    NSString *capitalizedString = [lowerCasedHelloWorld capitalizedString];
+    
+    NSLog(@"capitalizedString -> %@", capitalizedString);
+    
+    NSUInteger len = newObjectString.length;
+    unsigned long len2 = newObjectString.length;
+    
+    NSLog(@"The number of characters in newObjectString is: %ld", len);
+    NSLog(@"The number of characters in newObjectString using unsigned long is: %ld", len2);
   }
   return 0;
 }
