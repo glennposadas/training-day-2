@@ -11,7 +11,7 @@ int main(int argc, const char * argv[]) {
   @autoreleasepool {
     // insert code here...
     // ARC - automatic reference counting.
-    NSString *newObjectString = @"Hello, World! 🇨🇦";
+    NSString *newObjectString = @"Hello, World! 🇨🇦!!!";
     NSLog(@"%@", newObjectString);
   }
   return 0;
